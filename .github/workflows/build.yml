@@ -51,6 +51,10 @@ jobs:
           cp build.config padavan-ng/trunk/.config
           cd padavan-ng/trunk
           ./clear_tree.sh
+          
+          # Примусово вимикаємо CAN-шину в конфігах Busybox, щоб старе ядро не панікувало
+          find . -name "*.config" -exec sed -i 's/CONFIG_FEATURE_IP_LINK_CAN=y/# CONFIG_FEATURE_IP_LINK_CAN is not set/g' {} +
+          
           ./build_firmware.sh
           FW_FILE_NAME="$(find images -type f -regextype posix-extended -iregex ".*\.(trx|bin)$" \
                           -printf "%T@\t%f\n" | sort -V | tail -1 | cut -f2)"
