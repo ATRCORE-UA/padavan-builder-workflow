@@ -48,6 +48,12 @@ jobs:
     - name: Build firmware
       run: |
         cp build.config padavan-ng/trunk/.config
+        while IFS= read -r line; do
+          [[ $line =~ ^CONFIG_[A-Z0-9_]+= ]] || continue
+          key="${line%%=*}"
+          sed -i "/^${key}=/d;/^# ${key} is not set$/d" padavan-ng/trunk/.config
+          echo "$line" >> padavan-ng/trunk/.config
+        done < variables
         cd padavan-ng/trunk
         ./clear_tree.sh
         ./build_firmware.sh
