@@ -76,7 +76,7 @@ jobs:
 
     - name: Check firmware size
       run: |
-        partitions=padavan-ng/trunk/configs/boards/MTK/$CONFIG_FIRMWARE_PRODUCT_ID/partitions.config
+        partitions=padavan-ng/trunk/configs/boards/TPLINK/TL-WR841N-V13/partitions.config
         max_fw_size="$(awk '/Firmware/ { getline; getline; sub(",", ""); print strtonum($2); }' "$partitions")"
         fw_size="$(stat -c %s "$FW_FILE_NAME")"
 
