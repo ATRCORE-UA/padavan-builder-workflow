@@ -1,7 +1,7 @@
 # Примусово змушуємо скрипт бачити правильну папку вендора MTK
-CONFIG_VENDOR="MTK"
-PADAVAN_CONFIG_VENDOR="MTK"
-CONFIG_FIRMWARE_PRODUCT_ID="MT7628"
+CONFIG_VENDOR="TPLINK"
+PADAVAN_CONFIG_VENDOR="TPLINK"
+CONFIG_FIRMWARE_PRODUCT_ID="TL_WR841N-V13"
 
 # Системні налаштування репозиторію (залишаємо без змін)
 PADAVAN_REPO="https://gitlab.com/hadzhioglu/padavan-ng.git"
