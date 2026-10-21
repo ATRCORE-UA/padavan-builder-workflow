@@ -1,3 +1,8 @@
+# Обов'язкові змінні для вашої плати EVB MT7628
+CONFIG_VENDOR="MTK"
+CONFIG_FIRMWARE_PRODUCT_ID="MT7628"
+
+# Системні налаштування репозиторію (залишаємо без змін)
 PADAVAN_REPO="https://gitlab.com/hadzhioglu/padavan-ng.git"
 PADAVAN_BRANCH="master"
 PADAVAN_COMMIT="HEAD"
